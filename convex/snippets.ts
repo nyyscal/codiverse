@@ -191,3 +191,14 @@ export const deleteComment = mutation({
     },
 });
   
+export const getStarredSnippets = query({
+  handler: async(ctx) =>{
+    const identity = await ctx.auth.getUserIdentity()
+    if(!identity) return []
+
+    const stars = await ctx.db.query("stars").withIndex("by_user_id").filter((q)=> q.eq(q.field("userId"),identity.subject)).collect()
+
+    const snippets = await Promise.all(stars.map((star) => ctx.db.get(star.snippetId)))
+    return snippets.filter((snippet) => snippet !==null)
+  }
+})
