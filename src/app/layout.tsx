@@ -18,8 +18,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Codiverse",
-  description: "Let's code together!",
+  title: "Codeverse",
+  description: "Code for your future!",
 };
 
 export default function RootLayout({

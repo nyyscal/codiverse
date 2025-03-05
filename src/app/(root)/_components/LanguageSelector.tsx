@@ -45,9 +45,9 @@ const LanguageSelector = ({hasAccess}:{hasAccess:boolean}) => {
     ${!hasAccess && language !== "javascript" ? "opacity-50 cursor-not-allowed" : ""}`}
      >
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/5 
-        rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+        rounded-lg opacity-0 group-hover:opacity-100 transition-opacity  "
         aria-hidden="true" />
-        <div className="size-6 rounded-md bg-gray-800/50 p-0.5 group-hover:scale-110 transition-transform">
+        <div className="size-6 rounded-md bg-gray-800/50 p-0.5 group-hover:scale-110 transition-transform ">
         <Image src={currentLanguageObj.logoPath} alt="programming language logo" width={24} height={24} className='w-full h-full object-contain relative z-10'/>
         </div>
         <span className='text-gray-200 min-w-[80px] text-left group-hover:text-white transition-colors'>
@@ -71,7 +71,7 @@ const LanguageSelector = ({hasAccess}:{hasAccess:boolean}) => {
               <p className="text-xs font-medium text-gray-400">Select Language</p>
             </div>
 
-            <div className="max-h-[280px] overflow-y-auto overflow-x-hidden">
+            <div className="max-h-[280px] overflow-y-auto overflow-x-hidden ">
               {Object.values(LANGUAGE_CONFIG).map((lang, index) => {
                 const isLocked = !hasAccess && lang.id !== "javascript";
 
